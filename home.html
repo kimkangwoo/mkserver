@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKserver</title>
+    <script src="index.js"></script>
+
+    <style>.center{text-align: center;}</style>
+    <style>
+        .form-control {
+          margin-bottom: 10px;
+        }
+        textarea {
+          resize: none;
+          width: 100%;
+        }
+      </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Title</legend>
+        <h1 class = "center"> home.html page</h1>
+    </fieldset>
+    <form action="example-server.com">
+        <fieldset>
+          <legend>Insert contents</legend>
+          <div class="form-control">
+            <label for="name">이름 : </label>
+            <input type="name" id="name" placeholder="Enter your name" required />
+          </div>
+  
+          <div class="form-control">
+            <label for="email">이메일 : </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+  
+          <div class="form-control">
+            <label class="center" for="message">전송할 메세지</label>
+            <textarea
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+            <form>
+                <div>
+                    <input type="file" id="files" value="파일 선택..." accept="*" class="???" multiple/>
+    
+                </div>
+                <div class="preview">
+                  <p>
+
+                  </p>  
+                </div>
+            </form>
+        </div>
+        <div class="form-control">
+            <button type="submit">Submit</button>
+          </div>
+
+        </fieldset>
+  </form>
+</body>
+</html>
