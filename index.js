@@ -2,7 +2,7 @@ var express = require("express");
 
 var app = express();
 
-var port = 3000;
+var port = 3001;
 
 app.get("/", (req, res)=>{
     res.sendFile(__dirname + '/home.html');

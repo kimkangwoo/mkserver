@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MKserver</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1933/1933691.png"/>
     <script src="index.js"></script>
 
     <style>.center{text-align: center;}</style>
@@ -26,10 +27,17 @@
         <fieldset>
           <legend>Insert contents</legend>
           <div class="form-control">
+            <label for="id">아이디 : </label>
+            <input type="text" id="id" placeholder="Enter your identity" required />
+          </div>
+          <div class="form-control">
+            <label for="pw">패스워드 : </label>
+            <input type="password" id="pw" placeholder="Enter your password" required />
+          </div>
+          <div class="form-control">
             <label for="name">이름 : </label>
             <input type="name" id="name" placeholder="Enter your name" required />
           </div>
-  
           <div class="form-control">
             <label for="email">이메일 : </label>
             <input
@@ -38,6 +46,10 @@
               placeholder="Enter your email"
               required
             />
+          </div>
+          <div class="form-control">
+            <label for="name">휴대폰 : </label>
+            <input type="name" id="phone" placeholder="Enter your phone number" required />
           </div>
   
           <div class="form-control">
@@ -49,23 +61,15 @@
               placeholder="Enter your message"
               required
             ></textarea>
-            <form>
-                <div>
-                    <input type="file" id="files" value="파일 선택..." accept="*" class="???" multiple/>
-    
-                </div>
-                <div class="preview">
-                  <p>
-
-                  </p>  
-                </div>
-            </form>
-        </div>
-        <div class="form-control">
-            <button type="submit">Submit</button>
+            <input type="file" id="file" value="파일 선택..." accept="*" class="file-upload" multiple/>
+            <div class="preview">
+              <p></p>  
+            </div>
           </div>
-
+          <div class="form-control">
+            <button type="submit">Save</button>
+          </div>
         </fieldset>
-  </form>
+    </form>
 </body>
 </html>
