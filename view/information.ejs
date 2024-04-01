@@ -1,0 +1,11 @@
+<%- include('header.ejs') %>
+    <form action="/contacProc" method="post">
+        <h3>문의하기</h3>
+        <li>이름 : <input type="text" name="name" required> </li> 
+        <li>연락처 : <input type="text" name="phone" required> </li> 
+        <li>이메일 : <input type="text" name="email" required> </li> 
+        <li>내용 : <br>
+        <textarea name="content" cols="100" rows="10" required></textarea></li> 
+        <button>문의하기</button>
+    </form>
+<%- include('footer.ejs') %>
