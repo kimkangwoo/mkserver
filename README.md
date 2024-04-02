@@ -39,3 +39,75 @@
 * 데이터를 테이블 형식으로 저장하고, 테이블 간의 관계를 정의하여 데이터를 구조화하는 데이터베이스 시스템
 * SQL(Structured Query Language)을 사용하여 데이터를 관리하고 쿼리하는 데에 주로 활용된다.
 
+# SQL
+### DDL(Data Definition Language)
+<table>
+<tr>
+    <td>명령어</td>
+    <td>설명</td>
+</tr>
+<tr>
+    <td>CREATE</td>
+    <td>데이터베이스, 테이블등을 생성</td>
+</tr>
+<tr>
+    <td>ALTER</td>
+    <td>테이블 수정</td>
+</tr>
+<tr>
+    <td>DROP</td>
+    <td>데이터베이스, 테이블 삭제</td>
+</tr>
+<tr>
+    <td>TRUNCATE</td>
+    <td>테이블 초기화</td>
+</tr>
+</table>
+
+### DML(Data Manipulation Language)
+<table>
+<tr>
+    <td>명령어</td>
+    <td>설명</td>
+</tr>
+<tr>
+    <td>SELECT</td>
+    <td>데이터 조회</td>
+</tr>
+<tr>
+    <td>INSERT</td>
+    <td>데이터 삽입</td>
+</tr>
+<tr>
+    <td>UPDATE</td>
+    <td>데이터 수정</td>
+</tr>
+<tr>
+    <td>DELETE</td>
+    <td>데이터 삭제</td>
+</tr>
+</table>
+
+### DCL(Database Control Language)
+<table>
+<tr>
+    <td>명령어</td>
+    <td>설명</td>
+</tr>
+<tr>
+    <td>GRANT</td>
+    <td>특정 DB 사용자에게 특정 작업에대한 수행 권한 부여</td>
+</tr>
+<tr>
+    <td>REVOKE</td>
+    <td>특정 DB 사용자에게 특정 작업에 대한 수행 권한을 박탈, 회수</td>
+</tr>
+<tr>
+    <td>COMMIT</td>
+    <td>트랜잭션의 작업을 저장</td>
+</tr>
+<tr>
+    <td>ROLLBACK</td>
+    <td>트랜잭션의 작업을 취소, 원래대로 복구</td>
+</tr>
+</table>
