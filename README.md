@@ -111,3 +111,83 @@
     <td>트랜잭션의 작업을 취소, 원래대로 복구</td>
 </tr>
 </table>
+
+### 컬럼 옵션 
+<table>
+<tr>
+    <td>INT</td>
+    <td>정수 자료형</td>
+</tr>
+<tr>
+    <td>VARCHAR</td>
+    <td>문자열 자료형, 가변 길이</td>
+</tr>
+<tr>
+    <td>TEXT</td>
+    <td>긴 문자열은 TEXT로 별도 저장</td>
+</tr>
+<tr>
+    <td>DATETIME</td>
+    <td>날짜 자료형 저장</td>
+</tr>
+<tr>
+    <td>TINYINT</td>
+    <td>-128~127까지 저장 + Boolean값도 가능</td>
+</tr>
+</table>
+
+#### 컬럼 추가 옵션
+<table>
+<tr>
+    <td>NOT NULL</td>
+    <td>빈 값은 받지 않는다.</td>
+</tr>
+<tr>
+    <td>AUTO_INCREMENT</td>
+    <td>숫자 자료형인 경우 다음 로우가 저장될 때 자동으로 1증가</td>
+</tr>
+<tr>
+    <td>UNSIGNED</td>
+    <td>0과 양수만 허용</td>
+</tr>
+<tr>
+    <td>ZEROFILL</td>
+    <td>숫자의 자리 수가 고정된 경우 빈 자리에 0을 넣는다.</td>
+</tr>
+<tr>
+    <td>DEFAULT now()</td>
+    <td>날짜 컬럼의 기본값을 현재 시간으로</td>
+</tr>
+</table>
+
+## Primary Key
+* id가 테이블에서 로우를 특정할 수 있게 해주는 고유한 값
+
+## Unique Index [이름] (name ASC)
+* 해당 컬럼(name)이 고유해야 함을 나타내는 옵션
+* ASC : 오름차순
+* DESC : 내림차순
+
+## foreign key(외래키)
+> 예시 : FOREIGN KEY (commenter) REFERENCES nodejs.users(id)
+* `FOREIGN KEY (컬러명) REFERENCES 데이터베이스.테이블명(컬럼)`
+
+> ON DELETE CASCADE : 부모 row 삭제 시 자식 row도 삭제 
+> ON UPDATE CASCADE : 부모 row 변경 시 자식 row도 변경
+* CASCADE : 부모 테이블의 row에 `DELETE` 또는 `UPDATE` 명령어를 적용할 때, 자동적으로 자식 테이블의 매치되는 row에도 똑같이 명령어를 반영하는 것
+
+# 시퀄라이즈 ORM
+[>>>시퀄라이즈 예제<<<](https://github.com/zerocho/nodejs-book/tree/master/ch7/7.6/learn-sequelize)
+* ORM(Object Relational Mapping) : 객체와 데이터를 매핑
+* MySQL 외에도 다른 RDB와도 호환
+* JS 문법으로 DB 조작 가능
+
+### 1. 라이브러리 설치
+```
+> npm i express morgan nunjucks sequelize sequelize-cli mysql2
+> npm i -D nodemon
+```
+###### +시퀄라이즈 구조 생성
+```
+> npx sequelize init
+```

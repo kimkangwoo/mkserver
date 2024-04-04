@@ -1,11 +1,17 @@
-var id = document.getElementById(id);
-var pw = document.getElementById(pw);
-var name = document.getElementById(name);
-var email = document.getElementById(email);
-var phone  = document.getElementById(phone);
-var message = document.getElementById(message);
-var file = document.getElementById(file);
+const mysql      = require('mysql');
 
-FormData.addEventListener("submit", function(e){
-    console.log(id, pw, name, email, phone, message, file);
+const connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'root',
+  database : 'mydatabase'
 });
+
+connection.connect();
+
+connection.query('SELECT * from user_table', (error, rows, fields) => {
+  if (error) throw error;
+  console.log('User info is: ', rows);
+});
+
+connection.end();

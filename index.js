@@ -7,18 +7,6 @@ const app = express();
 
 const port = 3001;
 
-// mysql
-const connection = mysql.createConnection({
-    host : 'localhost',
-    user : 'root',
-    password : 'root',
-    database : 'user'
-});
-
-connection.connect((err)=>{
-    if (err) throw err;
-    console.log(`database : __Connected__`);
-})
 // ejs
 app.set("view engine", "ejs");
 app.set("views", './view');
@@ -26,7 +14,6 @@ app.set("views", './view');
 app.use(bodyparser.urlencoded({
     extended: false
 }));
-
 app.get("/", (req, res)=>{
     res.render('index'); // ./view/index.ejs
 });
@@ -42,6 +29,8 @@ app.get("/map", (req, res)=>{
 app.get("/information", (req, res)=>{
     res.render('information');
 });
+
+// Route
 app.post("/contacProc", (req, res)=>{
     const name = req.body.name;
     const phone = req.body.phone;
