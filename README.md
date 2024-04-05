@@ -1,5 +1,6 @@
 # mkserver
-* 현재 리포지터리는 개인적으로 지극히 공부용으로 만들어진 리포지터리입니다.<br>
+* 현재 리포지터리는 개인적으로 지극히 공부용으로 만들어진 리포지터리입니다.
+[참고 도서](https://thebook.io/080334/0350/)<br>
 ![img](https://cdn-icons-png.flaticon.com/128/1831/1831930.png)
 
 # Node.js
@@ -12,6 +13,49 @@
 |모듈 시스템|Node.js는 CommonJS나 ES6 모듈 시스템을 사용하여 모듈화된 코드를 쉽게 관리할 수 있습니다.|
 |크로스 플랫폼| Windows, macOS, Linux 등 다양한 플랫폼에서 동작하며, 크로스 플랫폼 개발을 지원합니다.|
 
+### async / await
+* async 함수 : 함수 앞에 async 키워드를 붙여서 정의합니다. 해당 함수는 항상 Promise를 반환하게 됩니다.
+* await : async 함수 내에서 await 키워드를 사용하여 다른 비동기 함수의 처리를 기다릴 수 있습니다.
+
+```javascript
+async function process() {
+  const result = await fetchData(); // fetchData 함수의 처리가 완료되면 그 결과를 result에 저장합니다.
+  console.log(result);
+}
+```
+### Promise 
+* JS에서 비동기를 위한 객체
+
+|종류||
+|:--:|:--:|
+|대기(pending)|초기 상태, 프로미스가 성공하거나 실패할 때까지의 상태|
+|이행(fulfilled)|비동기 작업이 성공적으로 완료되어 프로미스가 이행된 상태|
+|거부(rejected)|비동기 작업이 실패하여 프로미스가 거부된 상태로 실패 시 에러 발생|
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  // 비동기 작업 수행
+  if (작업 성공) {
+    resolve(결과); // 작업이 성공했을 때 resolve를 호출하여 프로미스를 이행 상태로 만듭니다.
+  } else {
+    reject(에러); // 작업이 실패했을 때 reject를 호출하여 프로미스를 거부 상태로 만듭니다.
+  }
+});
+
+myPromise
+  .then((result) => {
+    // 프로미스가 이행됐을 때의 처리
+    console.log(result);
+  })
+  .catch((error) => {
+    // 프로미스가 거부됐을 때의 처리
+    console.error(error);
+  })
+  .finally(() => {
+    // 프로미스의 상태와 상관없이 항상 실행되는 코드
+    console.log('작업 완료');
+  });
+```
 
 # DataBase 
 ### DataBase
@@ -191,3 +235,23 @@
 ```
 > npx sequelize init
 ```
+
+<table>
+<tr>
+    <td>nunjucks</td>
+    <td>* js 템플릿 엔진 <br> * 웹 애플리케이션에서 동적으로 HTML을 생성하는 데 사용</td>
+</tr>
+<tr>
+    <td>sequelize</td>
+    <td>js, TypeScript로 DB를 쉽게 다루도록 도와줌</td>
+</tr>
+<tr>
+    <td>sequelize-cli</td>
+    <td>Sequelize 프레임워크와 관련된 명령줄 도구</td>
+</tr>
+<tr>
+    <td>mysql2</td>
+    <td>Node.js를 위한 MySQL 데이터베이스 드라이버</td>
+</tr>
+</table>
+

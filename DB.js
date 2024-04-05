@@ -1,17 +1,16 @@
-const mysql      = require('mysql');
-
-const connection = mysql.createConnection({
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
-  database : 'mydatabase'
+  database : 'myserver'
 });
-
+ 
 connection.connect();
-
-connection.query('SELECT * from user_table', (error, rows, fields) => {
+ 
+connection.query('SELECT * FROM user.user_status', function (error, results, fields) {
   if (error) throw error;
-  console.log('User info is: ', rows);
+  console.log('users: ', results);
 });
-
+ 
 connection.end();

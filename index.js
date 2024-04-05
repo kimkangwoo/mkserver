@@ -1,7 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 var bodyparser = require("body-parser");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 const app = express();
 
@@ -30,16 +30,6 @@ app.get("/information", (req, res)=>{
     res.render('information');
 });
 
-// Route
-app.post("/contacProc", (req, res)=>{
-    const name = req.body.name;
-    const phone = req.body.phone;
-    const email = req.body.email;
-    const content = req.body.content;
-
-    var a = `${name} ${phone} ${email} ${content}`;
-    res.send(a);
-})
 
 app.listen(port, function(){
     console.log(`Server is running on port : http://localhost:${port}`)
