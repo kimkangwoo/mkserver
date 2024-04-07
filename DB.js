@@ -4,11 +4,12 @@ const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 
-//
+// sync DB server 
 const { sequelize } = require('./models');
+const port = 3001;
 
+// 
 const app = express();
-app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
   express: app,
@@ -40,6 +41,6 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-app.listen(app.get('port'), () => {
-  console.log(app.get('port'), '번 포트에서 대기 중');
+app.listen(port, () => {
+  console.log(`http://localhost:${port}`);
 });
