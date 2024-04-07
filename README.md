@@ -14,6 +14,8 @@
 |모듈 시스템|Node.js는 CommonJS나 ES6 모듈 시스템을 사용하여 모듈화된 코드를 쉽게 관리할 수 있습니다.|
 |크로스 플랫폼| Windows, macOS, Linux 등 다양한 플랫폼에서 동작하며, 크로스 플랫폼 개발을 지원합니다.|
 
+* 라우터 : 쉽게 말하면 연결장치, 클라이언트의 요청 경로를 보고 이 요청을 처리할 수 있는 곳으로 기능을 전달해 주는 역할
+
 ### async / await
 * async 함수 : 함수 앞에 async 키워드를 붙여서 정의합니다. 해당 함수는 항상 Promise를 반환하게 됩니다.
 * await : async 함수 내에서 await 키워드를 사용하여 다른 비동기 함수의 처리를 기다릴 수 있습니다.
@@ -240,7 +242,7 @@ myPromise
 <table>
 <tr>
     <td>nunjucks</td>
-    <td>* js 템플릿 엔진 <br> * 웹 애플리케이션에서 동적으로 HTML을 생성하는 데 사용</td>
+    <td><li>js 템플릿 엔진</li> <li>웹 애플리케이션에서 동적으로 HTML을 생성하는 데 사용</li> </td>
 </tr>
 <tr>
     <td>sequelize</td>
