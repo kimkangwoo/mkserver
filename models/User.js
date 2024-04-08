@@ -43,6 +43,13 @@ class User extends Sequelize.Model {
   }
 
   static associate(db) {}
+
+  static associate(db){
+    db.User.hasMany(db.Commente, {foreignkey : 'commenter', sourceKey : 'id'});
+    // hasMany : 1:N 관계(사용자 한명이 댓글 여러 개 작성)
+    // belongsTo : 다른 모델에 속하는 모델의 입장에서 사용(외래키 속성?)
+    // hasOne : 1:1 관계
+  }
 };
 
 module.exports = User; // 모듈 return
