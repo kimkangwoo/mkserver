@@ -1,0 +1,42 @@
+<%- include('header.ejs') %>
+
+<h4><li>현재 페이지는 저장된 DB를 보여주는 페이지입니다.</li></h4>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<form>
+    <table>
+        <tr>
+            <td>user_number</td>
+            <td>user_id</td>
+            <td>user_pw</td>
+            <td>user_name</td>
+            <td>user_phone</td>
+            <td>user_email</td>
+            <td>user_birth</td>
+        </tr>
+        <tr>
+            <td><%- data[0].user_number %></td>
+            <td><%- data[0].user_id %></td>
+            <td><%- data[0].user_pw %></td>
+            <td><%- data[0].user_name %></td>
+            <td><%- data[0].user_phone %></td>
+            <td><%- data[0].user_email %></td>
+            <td><%- data[0].user_birth %></td>
+        </tr>
+    </table>
+
+</form>
+<%- include('footer.ejs') %>
