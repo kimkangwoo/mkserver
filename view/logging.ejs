@@ -27,15 +27,19 @@
             <td>user_email</td>
             <td>user_birth</td>
         </tr>
-        <tr>
-            <td><%- data[0].user_number %></td>
-            <td><%- data[0].user_id %></td>
-            <td><%- data[0].user_pw %></td>
-            <td><%- data[0].user_name %></td>
-            <td><%- data[0].user_phone %></td>
-            <td><%- data[0].user_email %></td>
-            <td><%- data[0].user_birth %></td>
-        </tr>
+        <% if(data){ %>
+            <% for(let i=0; i<data.length; i++){ %>
+                <tr>
+                    <td><%- data[i].user_number %></td>
+                    <td><%- data[i].user_id %></td>
+                    <td><%- data[i].user_pw %></td>
+                    <td><%- data[i].user_name %></td>
+                    <td><%- data[i].user_phone %></td>
+                    <td><%- data[i].user_email %></td>
+                    <td><%- data[i].user_birth %></td>
+                </tr>
+            <% } %>
+        <% } %>
     </table>
 
 </form>
