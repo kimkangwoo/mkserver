@@ -3,6 +3,7 @@ const express = require("express");
 const ejs = require("ejs");
 const dbcon = require("./DatabaseConnect")
 const mysql = require("mysql2");
+const path = require("path");
 const connection = mysql.createConnection(dbcon);
 
 connection.connect();
@@ -39,6 +40,10 @@ app.get("/log", (req, res)=>{
             res.render('logging', {data:row}); // ./view/logging.ejs
         }
     });
+});
+app.get("/kmap",(req, res)=>{
+   const file = path.join(__dirname, "map.html");
+   res.sendFile(file);
 });
 
 app.listen(port, function(){
