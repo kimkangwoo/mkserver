@@ -41,10 +41,6 @@ app.get("/log", (req, res)=>{
         }
     });
 });
-app.get("/kmap",(req, res)=>{
-   const file = path.join(__dirname, "map.html");
-   res.sendFile(file);
-});
 
 app.listen(port, function(){
     console.log(`Server is running on port : http://localhost:${port}`)
